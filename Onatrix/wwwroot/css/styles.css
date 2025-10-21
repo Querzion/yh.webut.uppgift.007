@@ -15,7 +15,7 @@
     --color-title-primary: var(--color-primary);
     
     --color-footer-bg: #0E0E0E;
-    --color-footer-text: var(--color-primary);
+    --color-footer-text: var(--color-text-secondary);
     --color-footer-accent: var(--color-sub3);
     
     --color-border:  rgba(255, 255, 255, 0.06);
