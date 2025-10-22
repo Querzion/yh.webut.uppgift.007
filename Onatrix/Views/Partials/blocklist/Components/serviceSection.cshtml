@@ -1,4 +1,4 @@
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
     var content = (ContentModels.ServiceSection)Model.Content;
@@ -12,7 +12,7 @@
     <div class="max-w-7xl mx-auto px-4">
         <div class="flex flex-col items-center gap-2">
 
-            @if (settings.ShowServiceLabel == true)
+            @if (settings!.ShowServiceLabel)
             {
                 <h2 class="text-[.875rem] text-[var(--clr-secondary)] font-bold uppercase">@content.ServiceLabel</h2>
             }
