@@ -66,28 +66,12 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string InfoEmailLabel => this.Value<string>(_publishedValueFallback, "infoEmailLabel");
 
 		///<summary>
-		/// Image Layer 1
+		/// Info Image
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("infoImageLayer1")]
-		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops InfoImageLayer1 => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "infoImageLayer1");
-
-		///<summary>
-		/// Image Layer 2
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("infoImageLayer2")]
-		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops InfoImageLayer2 => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "infoImageLayer2");
-
-		///<summary>
-		/// Image Layer 3
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("infoImageLayer3")]
-		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops InfoImageLayer3 => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "infoImageLayer3");
+		[ImplementPropertyType("infoImage")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops InfoImage => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "infoImage");
 
 		///<summary>
 		/// Location Label

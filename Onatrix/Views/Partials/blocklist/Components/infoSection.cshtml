@@ -4,39 +4,38 @@
     var content = (ContentModels.InfoSection)Model.Content;
 }
 
-<section id="info-section" class="pt-16 pb-32 bg-[#F7F7F7]">
+<section id="info-section" class="pt-16 bg-[#F7F7F7]">
 	<div class="container mx-auto px-4 grid grid-cols-2 gap-16">
-        <div class="relative img-wrapper">
-            @if (content.InfoImageLayer1 != null)
+        <div class="info-img">
+            @if (content.InfoImage != null)
             {
-                <img src="@content.InfoImageLayer1.Url()" class="img-layer-1" />
-            }
-
-            @if (content.InfoImageLayer2 != null)
-            {
-                <img src="@content.InfoImageLayer2.Url()" class="img-layer-2" />
-            }
-
-            @if (content.InfoImageLayer3 != null)
-            {
-                <img src="@content.InfoImageLayer3.Url()" class="img-layer-3" />
+                <img src="@content.InfoImage.Url()" />
             }
         </div>
-        <div class="text-[#4F5955]">
+        <div class="text-[#4F5955] mt-36 leading-snug">
             <div>
-                <h1 class="text-[2.5rem] mb-8 font-bold leading-none">@content.InfoTitle</h1>
+                <h1 class="text-[2.5rem] w-8/12 mb-8 font-bold">@content.InfoTitle</h1>
             </div>
-            <div>
-                <p class="font-semibold"><i>gps</i> @content.InfoLocationLabel</p>
-                <p class="mb-8">@content.InfoLocationText</p>
+            <div class="flex gap-2">
+                <i class="text-[var(--clr-secondary)] text-[1.125rem] bi bi-geo-alt"></i>
+                <div>
+                    <p class="font-semibold">@content.InfoLocationLabel</p>
+                    <p class="mb-8">@content.InfoLocationText</p>
+                </div>
             </div>
-            <div>
-                <p class="font-semibold"><i>phone</i> @content.InfoPhoneLabel</p>
-                <p class="mb-8">@content.InfoPhoneNumber</p>
+            <div class="flex gap-2">
+                <i class="text-[var(--clr-secondary)] text-[1.125rem] bi bi-telephone"></i>
+                <div>
+                    <p class="font-semibold"> @content.InfoPhoneLabel</p>
+                    <p class="mb-8">@content.InfoPhoneNumber</p>
+                </div>
             </div>
-            <div>
-                <p class="font-semibold"><i>letter</i> @content.InfoEmailLabel</p>
-                <p class="mb-8">@content.InfoEmailAddress</p>
+            <div class="flex gap-2">
+                <i class="text-[var(--clr-secondary)] text-[1.125rem] bi bi-envelope"></i>
+                <div>
+                    <p class="font-semibold"> @content.InfoEmailLabel</p>
+                    <p class="mb-8">@content.InfoEmailAddress</p>
+                </div>
             </div>
         </div>
 	</div>
