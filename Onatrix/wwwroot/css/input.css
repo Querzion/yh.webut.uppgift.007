@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@theme {
+    --color-neutral: #FFFFFF;
+    --color-white: #F2EDDC;
+    --color-white-100: #F7F7F7;
+    --color-dark: #0E0E0E;
+    --color-primary: #4F5955;
+    --color-main-light: #606966;
+    --color-accent: #F2EDDC;
+    --color-secondary: #D9C3A9;
+    --color-gray-400: #4B5264;
+    --color-body-text: #535656;
+    --color-body-text-100: #999999;
+    --color-note: #9C9EA6;
+    --color-border-gray: #EAEAEA;
+    --color-border-400: C7C8C9;
+        
+    --color-primary:  #4F5955;
+    --color-secondary:  #FFFFFF; 
+    --color-sub1:   #F2EDDC; 
+    --color-sub2:   #F7F7F7; 
+    --color-sub3:   #D9C3A9;
+    --color-note:   #9C9EA6; 
+
+    --color-something-primary: var(--color-primary); 
+    --color-something-secondary: #535656; 
+    --color-something-third: var(--color-secondary);
+    --color-title-primary: var(--color-primary);
+    
+    --color-footer-bg: #0E0E0E;
+    --color-footer-text: var(--color-text-secondary);
+    --color-footer-accent: var(--color-sub3);
+    
+    --color-border:  rgba(255, 255, 255, 0.06);
+
+    --font-poppins: 'Poppins', sans-serif;
+
+    --icon-geo: "\f041";
+    --icon-phone: "\f095";
+    --icon-envelope: "\f0e0";
+}
+
+body {
+    @apply font-poppins;
+}
+
+footer {
+    @apply bg-footer-bg text-footer-text;
+}
+footer span {
+    @apply text-footer-accent;
+}
+.rte p {
+    @apply text-[1.125rem] text-primary;
+}
+.rte h3 {
+    @apply text-[2.5rem] text-primary font-bold;
+}
+
+.bi-geo-alt::before {
+    content: "\f041";
+}
+.bi-telephone::before {
+    content: "\f095";
+}
+.bi-envelope::before {
+    content: "\f0e0";
+}

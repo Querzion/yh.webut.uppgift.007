@@ -1,0 +1,14 @@
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+@{
+    var rootContent = Umbraco.ContentAtRoot();
+    var siteSettings = rootContent.OfType<SiteSettings>().FirstOrDefault();
+}
+
+<header class="relative shadow-sm z-999">
+
+    @await Html.PartialAsync("Partials/Layout/_TopBar")
+
+    @await Html.PartialAsync("Partials/Layout/_NavBar", siteSettings)
+
+</header>
