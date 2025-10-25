@@ -15,9 +15,7 @@
     --color-note: #9C9EA6;
     --color-border-gray: #EAEAEA;
     --color-border-400: C7C8C9;
-        
-    --color-primary:  #4F5955;
-    --color-secondary:  #FFFFFF; 
+    
     --color-sub1:   #F2EDDC; 
     --color-sub2:   #F7F7F7; 
     --color-sub3:   #D9C3A9;
@@ -66,4 +64,8 @@ footer span {
 }
 .bi-envelope::before {
     content: "\f0e0";
+}
+
+.current a {
+    @apply text-secondary;
 }
