@@ -421,9 +421,6 @@
   .bg-primary {
     background-color: var(--color-primary);
   }
-  .bg-white {
-    background-color: var(--color-white);
-  }
   .bg-white-100 {
     background-color: var(--color-white-100);
   }
