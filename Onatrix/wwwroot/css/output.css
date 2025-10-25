@@ -389,10 +389,10 @@
   .bg-white-100 {
     background-color: var(--color-white-100);
   }
-  .\[background-image\:url\(\'\/images\/banner\/BannerGlobe-BotLeft\.svg\'\)\,url\(\'\/images\/banner\/BannerGlobe-TopRight\.svg\'\)\] {
+  .bg-\[url\(\'\/images\/banner\/BannerGlobe-BotLeft\.svg\'\)\,url\(\'\/images\/banner\/BannerGlobe-TopRight\.svg\'\)\] {
     background-image: url('/images/banner/BannerGlobe-BotLeft.svg'),url('/images/banner/BannerGlobe-TopRight.svg');
   }
-  .\[background-position\:bottom_left\,top_right\] {
+  .bg-position-\[bottom_left\,top_right\] {
     background-position: bottom left,top right;
   }
   .bg-no-repeat {
