@@ -1,13 +1,43 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<IPageBanner>
+@using Umbraco.Cms.Core.PublishedCache
+@using Umbraco.Cms.Core.Routing
+@using Umbraco.Cms.Core.Services.Navigation
+
+@inject IPublishedContentCache PublishedContentCache
+@inject IDocumentNavigationQueryService DocumentNavigationQueryService
+@inject IPublishedUrlProvider PublishedUrlProvider
+
+@{ 
+    var selection = Model.Ancestors().ToArray();
+    var homePageDisplayName = "Home";
+    var isFirstItem = true;
+}
 
 <section class="bg-white-100 bg-no-repeat py-16
                 [background-image:url('/images/banner/BannerGlobe-BotLeft.svg'),url('/images/banner/BannerGlobe-TopRight.svg')]
                 [background-position:bottom_left,top_right]"> 
 
     <div class="container mx-auto px-4">
-        <h1 class="text-center text-[2.5rem] text-primary font-bold">@Model.PageTitle</h1> 
-        <div> 
         
+        <h1 class="text-center text-[2.5rem] text-primary font-bold">@Model.PageTitle</h1> 
+        
+        <div class="flex justify-center gap-3 pt-3"> 
+            @if (selection?.Length > 0)
+            {
+                <ul class="flex items-center justify-center gap-2 text-primary">
+                    @foreach (var item in selection.OrderBy(x => x.Level))
+                    {
+                        var displayName = isFirstItem ? homePageDisplayName : item.Name;
+                        <li>
+                            <a class="no-underline text-primary hover:text-secondary" href="@item.Url(PublishedUrlProvider)">@displayName</a>
+                            <span class="divider"> ></span>
+                        </li>
+                        isFirstItem = false;
+                    }
+
+                    <li class="text-secondary">@Model.Name</li>
+                </ul>
+            }
         </div>
     </div>
 
