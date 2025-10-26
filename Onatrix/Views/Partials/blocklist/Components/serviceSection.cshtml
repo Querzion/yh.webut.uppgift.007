@@ -9,7 +9,7 @@
     var current = Umbraco.AssignedContentItem;
     var siteRoot = current?.Root();
     var servicePage = siteRoot?.Children<ServicesPage>()?.FirstOrDefault();
-    var items = servicePage?.Children<ServiceDetail>()?.OrderByDescending(x => x.CreateDate).ToList() ?? [];
+    var items = servicePage?.Children<ServiceDetail>()?.OrderByDescending(x => x.CreateDate).Reverse().ToList() ?? [];
 }
 
 
