@@ -1,5 +1,25 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ServiceDetail>
 @{
-	Layout = null;
+	Layout = "mainLayout.cshtml";
 }
+
+<partial name="Partials/Layout/_PageBanner" model="(IPageBanner)Model" />
+
+<section class="py-16">
+	<div class="max-w-7xl mx-auto px-4">
+		<div class="flex flex-row justify-between">
+
+			<aside class="w-3/12 flex flex-col gap-4">
+				@Html.GetBlockListHtml(Model.ServiceDetailsAsides)
+			</aside>
+
+			<div class="block w-px bg-border-gray"></div>
+
+			<div class="w-8/12 flex flex-col gap-2">
+				Content coming soon...
+			</div>
+
+		</div>
+	</div>
+</section>
