@@ -56,7 +56,7 @@ footer span {
     @apply text-footer-accent;
 }
 .rte p {
-    @apply text-[1.125rem] text-primary;
+    @apply text-body-text mb-3;
 }
 .rte h3 {
     @apply text-[2.5rem] text-primary font-bold;
@@ -84,4 +84,7 @@ footer span {
 }
 .rte-ul li::marker {
     @apply text-secondary;
+}
+.img img {
+    @apply w-full h-auto object-cover pb-3 pt-3;
 }

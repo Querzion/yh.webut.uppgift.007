@@ -603,8 +603,8 @@ footer span {
   color: var(--color-footer-accent);
 }
 .rte p {
-  font-size: 1.125rem;
-  color: var(--color-primary);
+  margin-bottom: calc(var(--spacing) * 3);
+  color: var(--color-body-text);
 }
 .rte h3 {
   font-size: 2.5rem;
@@ -636,6 +636,13 @@ footer span {
 }
 .rte-ul li::marker {
   color: var(--color-secondary);
+}
+.img img {
+  height: auto;
+  width: 100%;
+  object-fit: cover;
+  padding-top: calc(var(--spacing) * 3);
+  padding-bottom: calc(var(--spacing) * 3);
 }
 @property --tw-rotate-x {
   syntax: "*";
