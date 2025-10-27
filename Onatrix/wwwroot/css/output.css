@@ -624,6 +624,19 @@ footer span {
 .current a {
   color: var(--color-secondary);
 }
+.rte-ul {
+  margin-top: calc(var(--spacing) * 3);
+  list-style-type: disc;
+  padding-left: calc(var(--spacing) * 5);
+}
+.rte-ul li {
+  margin-bottom: calc(var(--spacing) * 3);
+  font-size: var(--text-rte-xs);
+  color: var(--color-body-text);
+}
+.rte-ul li::marker {
+  color: var(--color-secondary);
+}
 @property --tw-rotate-x {
   syntax: "*";
   inherits: false;

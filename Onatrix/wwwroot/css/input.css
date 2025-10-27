@@ -75,3 +75,13 @@ footer span {
 .current a {
     @apply text-secondary;
 }
+
+.rte-ul {
+    @apply list-disc pl-5 mt-3;
+}
+.rte-ul li {
+    @apply text-rte-xs text-body-text mb-3;
+}
+.rte-ul li::marker {
+    @apply text-secondary;
+}
