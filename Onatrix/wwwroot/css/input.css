@@ -37,6 +37,12 @@
     --icon-geo: "\f041";
     --icon-phone: "\f095";
     --icon-envelope: "\f0e0";
+
+    --text-rte-xl: 4.375rem; /* 70px */
+    --text-rte-lg: 2.5rem; /* 40px */
+    --text-rte-md: 1.25rem; /* 20px */
+    --text-rte-sm: 1rem; /* 16px */
+    --text-rte-xs: 0.875rem; /* 14px */
 }
 
 body {
