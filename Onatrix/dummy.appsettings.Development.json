@@ -19,12 +19,18 @@
     },
     "Umbraco": {
         "CMS": {
-        "Content": {
-            "MacroErrors": "Throw"
-        },
-        "Hosting": {
-            "Debug": true
-        }
+            "Content": {
+                "MacroErrors": "Throw"
+            },
+            "Hosting": {
+                "Debug": true
+            },
+            "uSync": {
+                "Settings": {
+                    "ExportAtStartup": "All",
+                    "ExportOnSave": true
+                }
+            }
         }
     }
 }
