@@ -1,0 +1,22 @@
+@using Onatrix.ViewModels
+@model CallbackFormViewModel 
+
+@using (Html.BeginUmbracoForm("HandleCallbackForm", "Form", FormMetod.Post, new {novalidate = "novalidate", id = "callbackForm"})) {
+        <div class="px-[2rem] flex flex-col gap-6">
+                <div>
+                        <label asp-for="Name" class="sr-only"></label>
+                        <input asp-for="Name" type="text" placeholder="@Html.DisplayNameFor(x => x.Name)" class="w-full p-3 italic border border-gray-300 focus:ring-2 focus:ring-primary focus:outline-none" />
+                        <span asp-validation-for="Name"></span>
+                </div>
+                <div>
+                        <label asp-for="Email" class="sr-only"></label>
+                        <input asp-for="Email" type="text" placeholder="@Html.DisplayNameFor(x => x.Email)" class="w-full p-3 italic border border-gray-300 focus:ring-2 focus:ring-primary focus:outline-none" />
+                        <span asp-validation-for="Email"></span>
+                </div>
+                <div>
+                        <label asp-for="Phone" class="sr-only"></label>
+                        <input asp-for="Phone" type="text" placeholder="@Html.DisplayNameFor(x => x.Phone)" class="w-full p-3 italic border border-gray-300 focus:ring-2 focus:ring-primary focus:outline-none" />
+                        <span asp-validation-for="Phone"></span>
+                </div>
+        </div>
+}
