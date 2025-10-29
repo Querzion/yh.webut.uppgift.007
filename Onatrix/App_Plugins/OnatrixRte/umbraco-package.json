@@ -13,6 +13,35 @@
         },
         "items": [
             {
+            "label": "Headings",
+            "items": [
+                {
+                    "label": "H1",
+                    "items": [
+                        { "label": "Light", "data": { "tag": "h1", "class": "text-rte-xl font-light" }, "appearance": {} },
+                        { "label": "Normal", "data": { "tag": "h1", "class": "text-rte-xl font-regular" }, "appearance": {} },
+                        { "label": "Bold", "data": { "tag": "h1", "class": "text-rte-xl font-bold" }, "appearance": {} }
+                    ]
+                },
+                {
+                    "label": "H2",
+                    "items": [
+                        { "label": "Light", "data": { "tag": "h2", "class": "text-rte-lg font-light" }, "appearance": {} },
+                        { "label": "Normal", "data": { "tag": "h2", "class": "text-rte-lg font-regular" }, "appearance": {} },
+                        { "label": "Bold", "data": { "tag": "h2", "class": "text-rte-lg font-bold" }, "appearance": {} }
+                    ]
+                },
+                {
+                    "label": "H3",
+                    "items": [
+                        { "label": "Light", "data": { "tag": "h3", "class": "text-rte-md font-light" }, "appearance": {} },
+                        { "label": "Normal", "data": { "tag": "h3", "class": "text-rte-md font-regular" }, "appearance": {} },
+                        { "label": "Bold", "data": { "tag": "h3", "class": "text-rte-md font-bold" }, "appearance": {} }
+                    ]
+                }
+            ]
+            },
+            {
             "label": "Paragraphs",
             "items": [
                 {
@@ -60,6 +89,12 @@
             {
             "label": "Bullets",
             "data": { "tag": "ul", "class": "rte-ul" }
+            },
+            {
+            "label": "Images",
+            "items": [
+                { "label": "Full Width", "data": { "tag": "img", "class": "img" } }
+            ]
             }
         ]
         },
