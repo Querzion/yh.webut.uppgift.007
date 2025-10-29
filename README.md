@@ -7,6 +7,7 @@
 - Download the repository
 - npm install/update
 - dotnet run / or just run it in an IDE
+- npm run dev (starts tailwindcss regeneration of output.css from input.css)
 - Create an account and set up Umbraco
 - uSync should now be installed, import everything
 - Stop the application, and use the dummy.* to create settings
