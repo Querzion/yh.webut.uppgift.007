@@ -48,5 +48,13 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		}
 
 		// properties
+
+		///<summary>
+		/// Options
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("callbackRequestOptions")]
+		public virtual global::System.Collections.Generic.IEnumerable<string> CallbackRequestOptions => this.Value<global::System.Collections.Generic.IEnumerable<string>>(_publishedValueFallback, "callbackRequestOptions");
 	}
 }
