@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.InteropServices.JavaScript;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace Onatrix.ViewModels;
 
@@ -21,4 +22,7 @@ public class CallbackFormViewModel
     
     [Required(ErrorMessage = "Please select an option.")]
     public string SelectedOption { get; set; } = null!;
+
+    [BindNever]
+    public IEnumerable<string> Options { get; set; } = [];
 }
