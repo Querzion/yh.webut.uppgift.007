@@ -4,6 +4,11 @@
 @{
     var content = (ContentModels.AboutCallbackSection)Model.Content;
     var settings = Model.Settings as ContentModels.AboutCallbackSettings;
+
+    var options = settings.CallbackRequestOptions;
+    var formVM = new CallbackFormViewModel {
+        Options = settings?.CallbackRequestOptions ?? []
+    };
 }
 
 <section class="py-28">
@@ -21,7 +26,18 @@
             </div>
             <p class="text-sm py-[1.5rem] px-[2rem] italic">@content.AboutCallbackFormDescription</p>
     
-            <partial name="Partials/Forms/_CallbackForm" model="new CallbackFormViewModel()"/>
+            <partial name="Partials/Forms/_CallbackForm" model="formVM" />
+
+            @if (TempData["FormSuccess"] != null) {
+                <div class="bg-green-50 text-green-700 p-4 mx-[2rem] mb-4 rounded-md">
+                    @TempData["FormSuccess"]
+                </div>
+            }
+            @if (TempData["FormError"] != null) {
+                <div class="bg-red-50 text-red-700 p-4 mx-[2rem] mb-4 rounded-md">
+                    @TempData["FormError"]
+                </div>
+            }
 
         </div>
 
