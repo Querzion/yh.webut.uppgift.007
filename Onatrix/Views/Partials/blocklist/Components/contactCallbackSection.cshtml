@@ -13,18 +13,30 @@
     ViewBag.FormLayout = "layout-2col";
 }
 
-<section class="py-28">
-    <div class="max-w-7xl mx-auto px-4 flex gap-10">
+<section class="py-90 relative overflow-hidden">
+    <div class="absolute inset-0 -z-10">
+		@if (content.MapBgImage != null)
+		{
+			<img src="@content.MapBgImage.Url()" class="w-full h-full object-cover" />
+		}
+	</div>
+    <div class="max-w-9xl mx-auto px-4 flex gap-10">
 
-        <div class="w-11/12 mx-auto bg-neutral shadow-md -mt-[11rem] z-[99] ">
+        <div class="w-7/12 mx-auto bg-neutral shadow-md -mt-[11rem] z-[99] p-16">
 
-            <div class="flex flex-col text-center ">
-
-                <p class="text-[1.875] text-secondary font-bold">@content.ContactCallbackFormLabel</p>
-
-                <p class="text-primary py-[1.5rem] text-[2.5rem] font-bold">@content.ContactCallbackFormTitle</p>
+            <div class="flex flex-col text-center">
                 
-                <p class="text-xs py-[1.5rem] px-[1rem] italic">@content.ContactCallbackFormText</p>
+                <div>
+                    <p class="text-[1.875] text-secondary font-bold uppercase">@content.ContactCallbackFormLabel</p>
+                </div>
+
+                <div class="mb-1">
+                    <p class="text-primary text-[2.5rem] font-bold">@content.ContactCallbackFormTitle</p>
+                </div>
+                
+                <div>
+                    <p class="text-sm italic">@content.ContactCallbackFormText</p>
+                </div>
               
             </div>
     

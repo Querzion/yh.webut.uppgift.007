@@ -50,7 +50,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
-		/// Contact Callback Form Label
+		/// Label
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
@@ -58,7 +58,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string ContactCallbackFormLabel => this.Value<string>(_publishedValueFallback, "contactCallbackFormLabel");
 
 		///<summary>
-		/// Contact Callback Form Text
+		/// Text
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
@@ -66,7 +66,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string ContactCallbackFormText => this.Value<string>(_publishedValueFallback, "contactCallbackFormText");
 
 		///<summary>
-		/// Contact Callback Form Title
+		/// Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
@@ -74,11 +74,11 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string ContactCallbackFormTitle => this.Value<string>(_publishedValueFallback, "contactCallbackFormTitle");
 
 		///<summary>
-		/// Contact Callback Section Map
+		/// MapBgImage
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("contactCallbackSectionMap")]
-		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops ContactCallbackSectionMap => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "contactCallbackSectionMap");
+		[ImplementPropertyType("mapBgImage")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops MapBgImage => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "mapBgImage");
 	}
 }
