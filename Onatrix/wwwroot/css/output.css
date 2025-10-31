@@ -372,8 +372,17 @@
   .h-96 {
     height: calc(var(--spacing) * 96);
   }
+  .h-\[45px\] {
+    height: 45px;
+  }
+  .h-\[50px\] {
+    height: 50px;
+  }
   .h-\[220px\] {
     height: 220px;
+  }
+  .h-auto {
+    height: auto;
   }
   .h-full {
     height: 100%;
@@ -416,6 +425,15 @@
   }
   .w-15\/20 {
     width: calc(15/20 * 100%);
+  }
+  .w-\[120px\] {
+    width: 120px;
+  }
+  .w-\[150px\] {
+    width: 150px;
+  }
+  .w-\[180px\] {
+    width: 180px;
   }
   .w-full {
     width: 100%;
@@ -489,6 +507,12 @@
   .gap-16 {
     gap: calc(var(--spacing) * 16);
   }
+  .gap-\[1\.5rem\] {
+    gap: 1.5rem;
+  }
+  .gap-\[2\.5rem\] {
+    gap: 2.5rem;
+  }
   .space-y-4 {
     :where(& > :not(:last-child)) {
       --tw-space-y-reverse: 0;
@@ -498,6 +522,12 @@
   }
   .gap-y-5 {
     row-gap: calc(var(--spacing) * 5);
+  }
+  .gap-y-8 {
+    row-gap: calc(var(--spacing) * 8);
+  }
+  .gap-y-10 {
+    row-gap: calc(var(--spacing) * 10);
   }
   .self-start {
     align-self: flex-start;
@@ -567,6 +597,9 @@
   }
   .stroke-secondary {
     stroke: var(--color-secondary);
+  }
+  .object-contain {
+    object-fit: contain;
   }
   .object-cover {
     object-fit: cover;
