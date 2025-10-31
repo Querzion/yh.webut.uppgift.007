@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "./rte.css";
+@import "./forms.css";
 
 @theme {
     --color-neutral: #FFFFFF;
@@ -19,7 +21,6 @@
     --color-sub1:   #F2EDDC; 
     --color-sub2:   #F7F7F7; 
     --color-sub3:   #D9C3A9;
-    --color-note:   #9C9EA6; 
 
     --color-something-primary: var(--color-primary); 
     --color-something-secondary: #535656; 
@@ -55,13 +56,6 @@ footer {
 footer span {
     @apply text-footer-accent;
 }
-.rte p {
-    @apply text-body-text mb-3;
-}
-.rte h3 {
-    @apply text-[2.5rem] text-primary font-bold;
-}
-
 .bi-geo-alt::before {
     content: "\f041";
 }
@@ -71,20 +65,7 @@ footer span {
 .bi-envelope::before {
     content: "\f0e0";
 }
-
 .current a {
     @apply text-secondary;
 }
 
-.rte-ul {
-    @apply list-disc pl-5 mt-3;
-}
-.rte-ul li {
-    @apply text-rte-xs text-body-text mb-3;
-}
-.rte-ul li::marker {
-    @apply text-secondary;
-}
-.img img {
-    @apply w-full h-auto object-cover pb-3 pt-3;
-}
