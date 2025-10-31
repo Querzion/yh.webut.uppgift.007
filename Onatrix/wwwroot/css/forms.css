@@ -9,3 +9,67 @@
 .field-validation-error {
     @apply mt-1 block text-sm text-red-600;
 }
+
+/* ------------------------------------------------------------------
+   CALLBACK FORM – shared base styles
+------------------------------------------------------------------ */
+.callback-form {
+    @apply px-8 py-6;
+}
+
+/* fields container – default 1-col, overridden when .layout-2col */
+.callback-form__fields {
+    @apply grid grid-cols-1 gap-6;
+}
+
+/* each column – always flex-col */
+.callback-form__col {
+    @apply flex flex-col gap-6;
+}
+
+/* individual field */
+.field {
+    @apply space-y-1;
+}
+
+/* inputs & select */
+.input {
+    @apply w-full p-3 italic border border-gray-300 rounded-md
+    focus:ring-2 focus:ring-primary focus:outline-none
+    focus:border-transparent;
+}
+
+/* validation errors */
+.error {
+    @apply block text-sm text-red-600;
+}
+
+/* submit wrapper */
+.callback-form__submit {
+    @apply mt-6;
+}
+
+/* ------------------------------------------------------------------
+   LAYOUT: 2-column version (Contact page only)
+------------------------------------------------------------------ */
+.layout-2col .callback-form__fields {
+    @apply md:grid-cols-2;
+}
+
+/* ------------------------------------------------------------------
+   BUTTON STYLES
+------------------------------------------------------------------ */
+/* Default (About/Home) – full-width secondary bg */
+.callback-form button {
+    @apply w-full px-8 py-3 bg-secondary text-primary font-medium rounded-md
+    hover:bg-secondary/90 transition;
+}
+
+/* Contact page – small primary button */
+.layout-2col .callback-form button {
+    @apply w-auto px-6 py-2 bg-primary text-secondary text-sm;
+}
+
+.layout-2col .callback-form__submit {
+    @apply text-center;
+}
