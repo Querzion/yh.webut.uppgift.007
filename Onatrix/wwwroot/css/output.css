@@ -474,6 +474,15 @@
   .max-w-\[25rem\] {
     max-width: 25rem;
   }
+  .max-w-\[50rem\] {
+    max-width: 50rem;
+  }
+  .max-w-\[140rem\] {
+    max-width: 140rem;
+  }
+  .max-w-\[150rem\] {
+    max-width: 150rem;
+  }
   .max-w-md {
     max-width: var(--container-md);
   }
