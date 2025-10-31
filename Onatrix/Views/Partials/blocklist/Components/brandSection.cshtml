@@ -1,0 +1,27 @@
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels
+
+@{
+    var content = (ContentModels.BrandSection)Model.Content;
+    var brandLogoList = content.BrandLogoList;
+}
+
+<section class="py-16 bg-neutral">
+    <div class="max-w-7xl mx-auto px-4">
+
+        <div class="flex flex-wrap justify-center gap-[1.5rem] gap-y-8 pt-5 pb-5 -mx-2">
+            @if (brandLogoList != null)
+            {
+                for (var i = 0; i < brandLogoList.Count; i++)
+                {
+                    var brandLogo = brandLogoList[i];
+
+                    <div class="w-[180px] h-[50px] px-4 flex justify-center items-center">
+                        <partial name="Partials/blocklist/Components/brandLogo" model="brandLogo" />
+                    </div>
+                }
+            }
+        </div>
+
+    </div>
+</section>
