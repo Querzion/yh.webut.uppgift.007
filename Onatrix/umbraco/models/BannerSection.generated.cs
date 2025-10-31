@@ -18,7 +18,7 @@ using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
-	/// <summary>Banner Section</summary>
+	/// <summary>Banner Section (NOT IN USE)</summary>
 	[PublishedModel("bannerSection")]
 	public partial class BannerSection : PublishedElementModel
 	{
