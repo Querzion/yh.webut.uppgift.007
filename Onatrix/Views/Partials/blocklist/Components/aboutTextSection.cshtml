@@ -1,0 +1,33 @@
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.AboutTextSection)Model.Content;
+}
+
+<section class="py-16">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex flex-col md:flex-row gap-2 items-center">
+            
+            <div class="md:w-2/5 pt-8">
+                @if (content.AboutTextSectionImage != null)
+                {
+                    <img src="@content.AboutTextSectionImage.Url()" 
+                         class="w-full max-w-[25rem] h-auto object-cover rounded-lg shadow-md mx-auto md:mx-0"
+                         alt="@content.AboutTextSectionImageLabel" />
+                    @if (!string.IsNullOrEmpty(content.AboutTextSectionImageLabel))
+                    {
+                        <p class="text-sm text-gray-600 mt-2 text-center md:text-left">
+                            @content.AboutTextSectionImageLabel
+                        </p>
+                    }
+                }
+            </div>
+
+            <div class="md:w-4/5">
+                <div class="prose prose-lg max-w-none rte rte-ul">
+                    @Html.Raw(content.AboutTextSectionBody)
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
