@@ -1,0 +1,38 @@
+@using Onatrix.ViewModels
+@model QuestionFormViewModel
+
+@using (Html.BeginUmbracoForm("HandleQuestionForm", "Form", FormMethod.Post,
+    new { novalidate = "novalidate", id = "questionForm" }))
+{
+    <div class="question-form">
+
+        <div class="question-form__fields">
+
+            <div class="question-form__col">
+                <div class="field">
+                    <label asp-for="Name" class="sr-only"></label>
+                    <input asp-for="Name" type="text" placeholder="@Html.DisplayNameFor(m => m.Name)" class="input" />
+                    <span asp-validation-for="Name" class="error"></span>
+                </div>
+
+                <div class="field">
+                    <label asp-for="Email" class="sr-only"></label>
+                    <input asp-for="Email" type="text" placeholder="@Html.DisplayNameFor(m => m.Email)" class="input" />
+                    <span asp-validation-for="Email" class="error"></span>
+                </div>
+            </div>
+
+            <div class="question-form__col">
+                <div class="field">
+                    <label asp-for="Question" class="sr-only"></label>
+                    <input asp-for="Question" type="text" placeholder="@Html.DisplayNameFor(m => m.Question)" class="input" />
+                    <span asp-validation-for="Question" class="error"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-form__submit">
+            <button type="submit">Submit</button>
+        </div>
+    </div>
+}
