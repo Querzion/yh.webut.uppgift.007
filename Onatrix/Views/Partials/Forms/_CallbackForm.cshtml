@@ -4,13 +4,10 @@
 @using (Html.BeginUmbracoForm("HandleCallbackForm", "Form", FormMethod.Post,
     new { novalidate = "novalidate", id = "callbackForm" }))
 {
-    <!-- 1. The wrapper gets a layout class from the parent page -->
     <div class="callback-form @ViewBag.FormLayout">
 
-        <!-- 2. The grid – only active when .layout-2col exists -->
         <div class="callback-form__fields">
 
-            <!-- LEFT (always) -->
             <div class="callback-form__col">
                 <div class="field">
                     <label asp-for="Name" class="sr-only"></label>
@@ -25,7 +22,6 @@
                 </div>
             </div>
 
-            <!-- RIGHT (always) -->
             <div class="callback-form__col">
                 <div class="field">
                     <label asp-for="Phone" class="sr-only"></label>
@@ -54,7 +50,6 @@
             </div>
         </div>
 
-        <!-- 3. Submit button – style controlled by parent class -->
         <div class="callback-form__submit">
             <button type="submit">Submit</button>
         </div>
