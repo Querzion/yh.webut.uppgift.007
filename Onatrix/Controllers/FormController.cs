@@ -43,4 +43,22 @@ public class FormController(
         TempData["FormSuccess"] = "Thank you! Your request has been received and we will get back to you soon.";
         return RedirectToCurrentUmbracoPage();
     }
+
+    public IActionResult HandleQuestionForm(QuestionFormViewModel model)
+    {
+        if (!ModelState.IsValid)
+        {
+            return CurrentUmbracoPage();
+        }
+
+        var result = _formSubmissionsService.SaveQuestionFormRequest(model);
+        if (!result)
+        {
+            TempData["FormError"] = "Something went wrong while submitting your request. Please try again later.";
+            return RedirectToCurrentUmbracoPage();
+        }
+
+        TempData["FormSuccess"] = "Thank you! Your request has been received and we will get back to you soon.";
+        return RedirectToCurrentUmbracoPage();
+    }
 }
