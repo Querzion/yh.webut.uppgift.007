@@ -48,7 +48,7 @@ public class FormSubmissionsService(IContentService contentService)
 
             request.SetValue("questionRequestName", model.Name);
             request.SetValue("questionRequestEmail", model.Email);
-            request.SetValue("questionRequestPhone", model.Question);
+            request.SetValue("questionRequestText", model.Question);
 
             var saveResult = _contentService.Save(request);
             return saveResult.Success;

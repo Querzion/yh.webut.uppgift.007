@@ -1,0 +1,46 @@
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using Onatrix.ViewModels
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.ServiceDetailQuestionSection)Model.Content;
+    @* var settings = Model.Settings as ContentModels.ServiceDetailQuestionSettings; *@
+
+    @* var options = settings.QuestionRequestOptions;
+    var formVM = new QuestionFormViewModel {
+        Options = settings?.QuestionRequestOptions ?? []
+    }; *@
+
+    ViewBag.FormLayout = "";
+}
+
+<section class="py-28">
+    <div class="max-w-7xl mx-auto px-4 flex gap-10">
+        
+        <div class="flex flex-col w-7/12">
+            <div class="rte">
+                @Html.Raw(content.ServiceDetailQuestionFormTitle)
+            </div>
+        </div>
+
+        <div class="flex flex-col w-5/12 shadow-md -mt-[11rem] z-[99] ">
+            <div class="bg-primary">
+                <p class="text-accent py-[1.5rem] px-[2rem] text-[1.875rem] font-bold"></p>
+            </div>
+            <p class="text-sm py-[1.5rem] px-[2rem] italic"></p>
+    
+            <partial name="Partials/Forms/_QuestionForm" />
+
+            @if (TempData["FormSuccess"] != null) {
+                <div class="bg-green-50 text-green-700 p-4 mx-[2rem] mb-4 rounded-md">
+                    @TempData["FormSuccess"]
+                </div>
+            }
+            @if (TempData["FormError"] != null) {
+                <div class="bg-red-50 text-red-700 p-4 mx-[2rem] mb-4 rounded-md">
+                    @TempData["FormError"]
+                </div>
+            }
+        </div>
+
+    </div>
+</section>
