@@ -78,7 +78,7 @@ const validateField = (field) => {
         Wire everything up when the DOM is ready
 -------------------------------------------------------------- */
 document.addEventListener('DOMContentLoaded', () => {
-    const form = document.querySelector('#callbackForm');
+    const form = document.querySelector('#Form');
     if (!form) return;
 
     // All inputs that have validation attributes
