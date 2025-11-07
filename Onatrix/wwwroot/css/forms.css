@@ -61,15 +61,20 @@
 ------------------------------------------------------------------ */
 /* Default (About/Home) – full-width secondary bg */
 .callback-form button {
-    @apply w-full py-3 px-12 text-[1.125rem] bg-secondary text-primary font-medium rounded-md
+    @apply w-full py-3 px-12 text-[1.125rem] bg-secondary text-primary font-medium rounded-sm
     hover:bg-secondary/90 transition;
 }
 
 /* Contact page – small primary button */
 .layout-2col .callback-form__submit button {
-    @apply w-auto py-3 px-12 text-[1.125rem] bg-primary text-secondary;
+    @apply w-auto py-3 px-12 text-[1.125rem] bg-primary text-white-100;
 }
 
 .layout-2col .callback-form__submit {
     @apply text-center;
+}
+
+/* Question form */
+.question-form__submit button {
+    @apply w-auto py-3 px-12 text-[1.125rem] bg-primary text-white-100 rounded-sm;
 }
