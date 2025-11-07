@@ -42,6 +42,19 @@
             ]
             },
             {
+                "label": "Super Size",
+                "items": [
+                    {
+                        "label": "One Hundred",
+                        "items": [
+                            { "label": "Light", "data": { "tag": "p", "class": "text-[6.25rem] font-light" }, "appearance": {} },
+                            { "label": "Normal", "data": { "tag": "p", "class": "text-[6.25rem] font-regular" }, "appearance": {} },
+                            { "label": "Bold", "data": { "tag": "p", "class": "text-[6.25rem] font-bold" }, "appearance": {} }
+                        ]
+                    }
+                ]
+            },
+            {
             "label": "Paragraphs",
             "items": [
                 {
