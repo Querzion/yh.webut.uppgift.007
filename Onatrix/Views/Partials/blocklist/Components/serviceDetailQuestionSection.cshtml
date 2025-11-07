@@ -3,44 +3,31 @@
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
     var content = (ContentModels.ServiceDetailQuestionSection)Model.Content;
-    @* var settings = Model.Settings as ContentModels.ServiceDetailQuestionSettings; *@
-
-    @* var options = settings.QuestionRequestOptions;
-    var formVM = new QuestionFormViewModel {
-        Options = settings?.QuestionRequestOptions ?? []
-    }; *@
-
-    ViewBag.FormLayout = "";
+    var settings = Model.Settings as ContentModels.ServiceDetailQuestionSettings;
 }
 
 <section class="py-28">
-    <div class="max-w-7xl mx-auto px-4 flex gap-10">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col gap-4">
         
-        <div class="flex flex-col w-7/12">
-            <div class="rte">
-                @Html.Raw(content.ServiceDetailQuestionFormTitle)
-            </div>
+        <div class="w-7/12 mb-2">
+            <h2 class="font-bold text-[1.5rem] text-primary">
+                @content.ServiceDetailQuestionFormTitle
+            </h2>
         </div>
 
-        <div class="flex flex-col w-5/12 shadow-md -mt-[11rem] z-[99] ">
-            <div class="bg-primary">
-                <p class="text-accent py-[1.5rem] px-[2rem] text-[1.875rem] font-bold"></p>
-            </div>
-            <p class="text-sm py-[1.5rem] px-[2rem] italic"></p>
+        <partial name="Partials/Forms/_QuestionForm" model="new QuestionFormViewModel()" />
     
-            <partial name="Partials/Forms/_QuestionForm" />
-
+        <div class="mt-2">
             @if (TempData["FormSuccess"] != null) {
-                <div class="bg-green-50 text-green-700 p-4 mx-[2rem] mb-4 rounded-md">
+                <div class="bg-green-50 text-green-700 p-4 mb-4 rounded-md">
                     @TempData["FormSuccess"]
                 </div>
             }
             @if (TempData["FormError"] != null) {
-                <div class="bg-red-50 text-red-700 p-4 mx-[2rem] mb-4 rounded-md">
+                <div class="bg-red-50 text-red-700 p-4 mb-4 rounded-md">
                     @TempData["FormError"]
                 </div>
             }
         </div>
-
     </div>
 </section>
