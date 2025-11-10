@@ -16,6 +16,18 @@ document.addEventListener('DOMContentLoaded', function () {
         navigation: {
             nextEl: '.custom-next',
             prevEl: '.custom-prev',
+        },
+        
+        breakpoints: {
+            768: {
+                slidesPerView: 2,
+                grid: { rows: 2, fill: 'row' },
+                slidesPerGroup: 2,
+                centeredSlides: false,
+                centeredSlidesBounds: false,
+                slidesOffsetBefore: 0,
+                slidesOffsetAfter: 0,
+            }
         }
     })
 })
