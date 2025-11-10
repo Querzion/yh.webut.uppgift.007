@@ -6,15 +6,15 @@
     int.TryParse(content.ReviewSectionReviewRating, out rating);
 }
 
-<section class="flex w-full">
-    <div class="max-w-5xl flex items-center bg-white-100">
-        
-        <div class="w-7/12 mx-auto flex flex-col text-primary">
-            <p class="text-secondary text-rte-xs font-bold">@content.ReviewSectionLabel</p>
-            <p class="text-rte-lg font-bold mt-2">@content.ReviewSectionTitle</p>
-            <p class="mt-6 text-body-text text-rte-md italic">@content.ReviewSectionReviewText</p>
+<section class="relative flex w-full bg-white-100">
 
-            <div class="mt-6 flex flex-row gap-1 text-yellow-400">
+    <div class="max-w-7xl w-full mx-auto flex items-center py-28 pl-4">
+        <div class="flex flex-col text-primary">
+            <p class="text-secondary text-rte-xs font-bold">@content.ReviewSectionLabel</p>
+            <p class="w-4/12 text-rte-lg font-bold mt-2">@content.ReviewSectionTitle</p>
+            <p class="w-6/12 mt-6 text-body-text text-rte-md italic">@content.ReviewSectionReviewText</p>
+
+            <div class="mt-6 flex flex-row gap-1 text-primary">
                 @for (var i = 0; i < rating; i++)
                 {
                     <svg data-slot="icon" fill="currentColor" stroke="none"
@@ -27,13 +27,13 @@
 
             <p class="mt-6 text-rte-xs">@content.ReviewSectionReviewName</p>
             <p class="text-rte-md italic">@content.ReviewSectionReviewAssociation</p>
-        </div>    
-
+        </div>
     </div>
 
-    <div class="w-6/12">
+    <div class="absolute right-0 top-0 h-full w-[45%]">
         <img class="w-full h-full object-cover"
              src="@content.ReviewSectionImage.Url()"
              alt="Image of @content.ReviewSectionReviewName" />
     </div>
 </section>
+
