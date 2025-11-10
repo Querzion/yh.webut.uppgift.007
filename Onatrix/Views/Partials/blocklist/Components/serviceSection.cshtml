@@ -10,6 +10,8 @@
     var siteRoot = current?.Root();
     var servicePage = siteRoot?.Children<ServicesPage>()?.FirstOrDefault();
     var items = servicePage?.Children<ServiceDetail>()?.OrderByDescending(x => x.CreateDate).Reverse().ToList() ?? [];
+
+    var isOnServicesPage = current?.ContentType.Alias == "servicesPage";
 }
 
 
@@ -42,11 +44,14 @@
                         }
                     </div>
 
-                    <div class="custom-pagination">
-                        <div class="custom-prev">prev</div>                
-                        <div class="swiper-pagination"></div>                
-                        <div class="custom-next">next</div>                    
-                    </div>                
+                    @if (isOnServicesPage)
+                    {
+                        <div class="custom-pagination">
+                            <div class="custom-prev">prev</div>                
+                            <div class="swiper-pagination"></div>                
+                            <div class="custom-next">next</div>                    
+                        </div>
+                    }             
 
                 </div>
             }
