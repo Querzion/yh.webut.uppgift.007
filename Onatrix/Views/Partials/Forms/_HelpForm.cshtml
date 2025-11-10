@@ -1,0 +1,47 @@
+@using Onatrix.ViewModels
+@model HelpFormViewModel
+
+@using (Html.BeginUmbracoForm("HandleHelpForm", "Form", FormMethod.Post,
+new { novalidate = "novalidate", id = "Form" }))
+{
+<div class="max-w-7xl mx-auto flex flex-col gap-4">
+    <div class="field w-full relative">
+        <label asp-for="Email" class="sr-only"></label>
+
+        <input asp-for="Email" type="text"
+               placeholder="@Html.DisplayNameFor(m => m.Email)"
+               class="input bg-neutral text-primary pr-10 w-full"
+               id="EmailField" />
+
+        <div class="absolute inset-y-0 right-3 flex items-center pointer-events-none">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
+                 xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="w-5 h-5 text-gray-400">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75
+                         m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25
+                         m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0
+                         L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75">
+                </path>
+            </svg>
+        </div>
+
+        <span asp-validation-for="Email" class="error"></span>
+    </div>
+</div>
+}
+
+@section Scripts {
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("Form");
+        const emailInput = document.getElementById("EmailField");
+
+        emailInput.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") {
+                e.preventDefault(); // prevent default page reload
+                form.submit();       // submit the form immediately
+            }
+        });
+    });
+</script>
+}

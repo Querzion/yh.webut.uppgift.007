@@ -39,6 +39,12 @@
     focus:border-transparent;
 }
 
+.input-dark {
+    @apply w-full p-3 italic border border-gray-300 rounded-md
+    focus:ring-2 focus:ring-white-100 focus:outline-none
+    focus:border-transparent;
+}
+
 /* validation errors */
 .error {
     @apply block text-sm text-red-600;
@@ -77,4 +83,8 @@
 /* Question form */
 .question-form__submit button {
     @apply w-auto py-3 px-12 text-[1.125rem] bg-primary text-white-100 rounded-sm;
+}
+
+.help-form__submit button {
+    @apply w-full py-3 px-12 text-[1.125rem] bg-primary text-white-100 rounded-sm;
 }
