@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "./rte.css";
 @import "./forms.css";
+@import "./swiper.css";
+
 
 @theme {
     --color-neutral: #FFFFFF;
