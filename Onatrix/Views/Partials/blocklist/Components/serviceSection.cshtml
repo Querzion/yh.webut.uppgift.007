@@ -28,16 +28,20 @@
             
             @if (items.Any())
             {
-                @foreach (var item in items)
-                {
-                    <div class="bg-neutral border-2 border-white-100 w-full min-h-[350px]">
-                        <a href="@item.Url()" class="block no-underline">
-                            <h4 class="p-6 font-semibold text-primary">@item.Name</h4>
-                            <img src="@(item.ServiceDetailThumbnail?.Url() ?? "~/images/fallback.svg")" alt="@item.Name" class="block w-full h-[220px] object-cover" />
-                            <p class="text-sm p-6">@item.ServiceDetailExcerpt</p>
-                        </a>
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        @foreach (var item in items)
+                        {
+                            <div class="swiper-slide bg-neutral border-2 border-white-100 w-full min-h-[350px]">
+                                <a href="@item.Url()" class="block no-underline">
+                                    <h4 class="p-6 font-semibold text-primary">@item.Name</h4>
+                                    <img src="@(item.ServiceDetailThumbnail?.Url() ?? "~/images/fallback.svg")" alt="@item.Name" class="block w-full h-[220px] object-cover" />
+                                    <p class="text-sm p-6">@item.ServiceDetailExcerpt</p>
+                                </a>
+                            </div>
+                        }
                     </div>
-                }
+                </div>
             }
             else
             {
