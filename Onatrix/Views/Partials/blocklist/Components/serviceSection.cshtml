@@ -28,7 +28,7 @@
             
             @if (items.Any())
             {
-                <div class="swiper serviceSwiper">
+                <div class="swiper serviceSwiper !-mx-4">
                     <div class="swiper-wrapper">
                         @foreach (var item in items)
                         {
@@ -41,6 +41,13 @@
                             </div>
                         }
                     </div>
+
+                    <div class="custom-pagination">
+                        <div class="custom-prev">prev</div>                
+                        <div class="swiper-pagination"></div>                
+                        <div class="custom-next">next</div>                    
+                    </div>                
+
                 </div>
             }
             else
