@@ -50,19 +50,59 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
-		/// About Review Section Body
+		/// Image
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("aboutReviewSectionBody")]
-		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString AboutReviewSectionBody => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "aboutReviewSectionBody");
+		[ImplementPropertyType("reviewSectionImage")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops ReviewSectionImage => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "reviewSectionImage");
 
 		///<summary>
-		/// About Review Section Image
+		/// Label
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("aboutReviewSectionImage")]
-		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops AboutReviewSectionImage => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "aboutReviewSectionImage");
+		[ImplementPropertyType("reviewSectionLabel")]
+		public virtual string ReviewSectionLabel => this.Value<string>(_publishedValueFallback, "reviewSectionLabel");
+
+		///<summary>
+		/// Association
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("reviewSectionReviewAssociation")]
+		public virtual string ReviewSectionReviewAssociation => this.Value<string>(_publishedValueFallback, "reviewSectionReviewAssociation");
+
+		///<summary>
+		/// Review Name
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("reviewSectionReviewName")]
+		public virtual string ReviewSectionReviewName => this.Value<string>(_publishedValueFallback, "reviewSectionReviewName");
+
+		///<summary>
+		/// Rating
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("reviewSectionReviewRating")]
+		public virtual string ReviewSectionReviewRating => this.Value<string>(_publishedValueFallback, "reviewSectionReviewRating");
+
+		///<summary>
+		/// Review Text
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("reviewSectionReviewText")]
+		public virtual string ReviewSectionReviewText => this.Value<string>(_publishedValueFallback, "reviewSectionReviewText");
+
+		///<summary>
+		/// Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("reviewSectionTitle")]
+		public virtual string ReviewSectionTitle => this.Value<string>(_publishedValueFallback, "reviewSectionTitle");
 	}
 }
