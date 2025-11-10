@@ -16,7 +16,7 @@ public class FormSubmissionsService(IContentService contentService)
             if (container == null)
                 return false;
 
-            var requestName = $"{DateTime.Now:yyyy-MM-dd HH:mm} - {model.Name}";
+            var requestName = $"Callback Request - {DateTime.Now:yyyy-MM-dd HH:mm} - {model.Name}";
             var request = _contentService.Create(requestName, container, "callbackRequest");
 
             request.SetValue("callbackRequestName", model.Name);
@@ -43,7 +43,7 @@ public class FormSubmissionsService(IContentService contentService)
             if (container == null)
                 return false;
             
-            var requestName = $"{DateTime.Now:yyyy-MM-dd HH:mm} - {model.Name}";
+            var requestName = $"Question - {DateTime.Now:yyyy-MM-dd HH:mm} - {model.Name}";
             var request = _contentService.Create(requestName, container, "questionRequest");
 
             request.SetValue("questionRequestName", model.Name);
@@ -70,7 +70,7 @@ public class FormSubmissionsService(IContentService contentService)
             if (container == null)
                 return false;
             
-            var requestName = $"{DateTime.Now:yyyy-MM-dd HH:mm} - {model.Email}";
+            var requestName = $"Help Request - {DateTime.Now:yyyy-MM-dd HH:mm} - {model.Email}";
             var request = _contentService.Create(requestName, container, "helpRequest");
 
             request.SetValue("helpRequestEmail", model.Email);
