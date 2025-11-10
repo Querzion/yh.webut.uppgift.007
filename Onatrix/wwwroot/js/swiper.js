@@ -27,6 +27,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 centeredSlidesBounds: false,
                 slidesOffsetBefore: 0,
                 slidesOffsetAfter: 0,
+            },
+            
+            1024: {
+                slidesPerView: 3,
+                grid: { rows: 2, fill: 'row' },
+                slidesPerGroup: 2,
+                centeredSlides: false,
+                centeredSlidesBounds: false,
+                slidesOffsetBefore: 0,
+                slidesOffsetAfter: 0,
             }
         }
     })
