@@ -1,5 +1,5 @@
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
-@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels
 @{
     var content = (ContentModels.TeamSection)Model.Content;
     var teamList = content.TeamMemberList;
@@ -11,21 +11,72 @@
             <h2 class="text-[.875rem] text-secondary font-bold uppercase">@content.TeamLabel</h2>
             <div class="rte">@Html.Raw(content.TeamTitle)</div>
         </div>
-        
-        <div class="flex flex-wrap gap-y-5 pt-5 pb-5 -mx-2">
-            @if (teamList != null)
-            {
-                for(var i = 0; i < teamList.Count; i++)
+
+        @if (teamList != null && teamList.Any())
+        {
+            <div class="lg:!hidden swiper teamSwiper !-mx-4 md:!mx-0 mt-8">
+                <div class="swiper-wrapper">
+                    @foreach (var teamMember in teamList)
+                    {
+                        <div class="swiper-slide px-4">
+                            <partial name="Partials/blocklist/Components/teamMember" model="teamMember" />
+                        </div>
+                    }
+                </div>
+
+                <div class="custom-pagination mt-4 flex justify-center gap-4">
+                    <div class="custom-prev cursor-pointer">Prev</div>
+                    <div class="swiper-pagination"></div>
+                    <div class="custom-next cursor-pointer">Next</div>
+                </div>
+            </div>
+
+            <div class="hidden lg:flex flex-wrap gap-y-5 pt-5 pb-5 -mx-2 mt-8">
+                @for (var i = 0; i < teamList.Count; i++)
                 {
                     var teamMember = teamList[i];
-                    var colClass = i < 3 ? "w-1/3" : "w-1/4";
-                    
+                    var colClass = i < 3 ? "lg:w-1/3" : "lg:w-1/4";
+
                     <div class="@colClass px-4">
                         <partial name="Partials/blocklist/Components/teamMember" model="teamMember" />
                     </div>
                 }
-            }
-        </div>
-
+            </div>
+        }
+        else
+        {
+            <p class="mt-8 text-center">No Team Members Available.</p>
+        }
     </div>
 </section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const teamSwiperEl = document.querySelector(".teamSwiper");
+        if (teamSwiperEl) {
+            const teamSwiper = new Swiper(".teamSwiper", {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                loop: true,
+                pagination: {
+                    el: ".teamSwiper .swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".teamSwiper .custom-next",
+                    prevEl: ".teamSwiper .custom-prev",
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                    }
+                }
+            });
+        }
+    });
+</script>
