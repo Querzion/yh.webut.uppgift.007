@@ -17,17 +17,17 @@
     <div class="absolute inset-0 -z-10 h-[40rem]">
 		@if (content.MapBgImage != null)
 		{
-			<img src="@content.MapBgImage.Url()" class="w-full h-full object-cover" />
+			<img src="@content.MapBgImage.Url()" class="w-full h-full object-cover" alt="map" />
 		}
 	</div>
     <div class="max-w-[140rem] mx-auto px-4 flex gap-10 pt-60 mt-40 mb-1">
 
-        <div class="w-7/12 mx-auto bg-neutral shadow-md -mt-[11rem] z-[99] p-16">
+        <div class="lg:w-7/12 mx-auto bg-neutral shadow-md -mt-[11rem] z-[99] p-8 lg:p-16">
 
             <div class="flex flex-col text-center">
                 
                 <div>
-                    <p class="text-[1.875] text-secondary font-bold uppercase">@content.ContactCallbackFormLabel</p>
+                    <p class="text-secondary font-bold uppercase">@content.ContactCallbackFormLabel</p>
                 </div>
 
                 <div class="mb-1">
