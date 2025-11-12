@@ -41,17 +41,44 @@
 
         @if (selection?.Length > 0)
         {
-            <ul class="flex items-center gap-16">
-                @foreach (var item in selection)
-                {
-                    <li class="@(item.IsAncestorOrSelf(Model) ? "current" : null)">
-                        <a class="font-bold text-primary hover:text-secondary transition-colors" href="@item.Url(PublishedUrlProvider)">@item.Name</a>
-                    </li>
-                }
-            </ul>
+            <div class="relative flex items-center">
+                <ul id="nav-menu" class="hidden absolute top-full right-0 w-48 bg-neutral shadow-md rounded-lg flex-col items-start p-4 gap-4 
+                                        md:gap-16 md:p-0 md:bg-transparent md:shadow-none md:static md:flex md:flex-row md:items-center md:w-auto">
+                    @foreach (var item in selection)
+                    {
+                        <li class="@(item.IsAncestorOrSelf(Model) ? "current" : null)">
+                            <a class="font-bold py-2 text-primary hover:text-secondary transition-colors block w-full" href="@item.Url(PublishedUrlProvider)">
+                                @item.Name
+                            </a>
+                        </li>
+                    }
+                </ul>
+
+                <button 
+                    id="menu-toggle" 
+                    class="ml-auto md:hidden flex items-center justify-center p-2 text-primary hover:text-secondary focus:outline-none transition-colors"
+                    aria-label="Toggle navigation">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+
+                <div class="md:hidden">
+                    <i class="fa-solid fa-magnifying-glass text-lg text-primary cursor-pointer"></i>
+                </div>
+            </div>
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const toggle = document.getElementById("menu-toggle");
+                    const menu = document.getElementById("nav-menu");
+
+                    toggle.addEventListener("click", function () {
+                        menu.classList.toggle("hidden");
+                    });
+                });
+            </script>
         }
 
-        <div class="">
+        <div class="hidden md:block">
             <i class="fa-solid fa-magnifying-glass text-lg text-primary cursor-pointer"></i>
         </div>
     </nav>
