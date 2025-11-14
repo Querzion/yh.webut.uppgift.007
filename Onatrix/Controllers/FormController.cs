@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Onatrix.Models;
 using Onatrix.Services;
 using Onatrix.ViewModels;
 using Umbraco.Cms.Core.Cache;
@@ -18,15 +19,17 @@ public class FormController(
     AppCaches appCaches,
     IProfilingLogger profilingLogger,
     IPublishedUrlProvider publishedUrlProvider,
-    FormSubmissionsService formSubmissionsService)
+    FormSubmissionsService formSubmissionsService,
+    IVerificationService verificationService)
     : SurfaceController(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger,
         publishedUrlProvider)
 {
     // GET
 
     private readonly FormSubmissionsService _formSubmissionsService = formSubmissionsService;
+    private readonly IVerificationService _verificationService = verificationService;
     
-    public IActionResult HandleCallbackForm(CallbackFormViewModel model)
+    public async Task<IActionResult> HandleCallbackForm(CallbackFormViewModel model)
     {
         if (!ModelState.IsValid)
         {
@@ -40,11 +43,21 @@ public class FormController(
             return RedirectToCurrentUmbracoPage();
         }
 
+        await _verificationService.SendVerificationAsync(new SendVerificationRequest
+        {
+            Email = model.Email,
+            SiteAddress = $"{Request.Scheme}://{Request.Host}{Request.Path}",
+            SiteLocation = "Callback Form",
+            FormType = "Callback Request",
+            Message = model.SelectedOption
+        });
+
+        
         TempData["FormSuccess"] = "Thank you! Your request has been received and we will get back to you soon.";
         return RedirectToCurrentUmbracoPage();
     }
 
-    public IActionResult HandleQuestionForm(QuestionFormViewModel model)
+    public async Task<IActionResult> HandleQuestionForm(QuestionFormViewModel model)
     {
         if (!ModelState.IsValid)
         {
@@ -57,12 +70,22 @@ public class FormController(
             TempData["FormError"] = "Something went wrong while submitting your request. Please try again later.";
             return RedirectToCurrentUmbracoPage();
         }
+        
+        await _verificationService.SendVerificationAsync(new SendVerificationRequest
+        {
+            Email = model.Email,
+            SiteAddress = $"{Request.Scheme}://{Request.Host}{Request.Path}",
+            SiteLocation = "Question Form",
+            FormType = "Question",
+            Message = model.Question
+        });
+
 
         TempData["FormSuccess"] = "Thank you! Your request has been received and we will get back to you soon.";
         return RedirectToCurrentUmbracoPage();
     }
     
-    public IActionResult HandleHelpForm(HelpFormViewModel model)
+    public async Task<IActionResult> HandleHelpForm(HelpFormViewModel model)
     {
         if (!ModelState.IsValid)
         {
@@ -75,6 +98,15 @@ public class FormController(
             TempData["FormError"] = "Submit error. Please try again later.";
             return RedirectToCurrentUmbracoPage();
         }
+        
+        await _verificationService.SendVerificationAsync(new SendVerificationRequest
+        {
+            Email = model.Email,
+            SiteAddress = $"{Request.Scheme}://{Request.Host}{Request.Path}",
+            SiteLocation = "Help Request Form",
+            FormType = "Help Request"
+        });
+
 
         TempData["FormSuccess"] = "Help request sent.";
         return RedirectToCurrentUmbracoPage();
